@@ -1,0 +1,93 @@
+/* html { 
+  background: url(images/bg.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+} */
+
+body {
+  font-family: 'Lato', sans-serif;
+  font-size: medium;
+  color: #202020;
+  }
+
+h1, h2, h3 {
+  font-family: 'Josefin Slab', serif;
+}
+
+.container h1 {
+  color: #202020;
+}
+
+.container p {
+  color: #202020;
+}
+
+.container h2 {
+  color: #202020;
+}
+
+.py-5 bg-image-full {
+  padding-bottom: 50px;
+}
+
+.nav-font {
+  font-family: 'Lato', sans-serif;
+}
+
+.buttons {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+btn-dark btn-large {
+  margin-bottom: 50px;
+  background-color: #202020;
+  color: #6666CC
+}
+
+.linkylinks  {
+  color: #202020;
+}
+
+.fancyj {
+  font-family: 'Josefin Slab', serif;
+}
+
+.bg-dark {
+  --bs-bg-opacity: 1;
+  background-color: rgba(var(--bs-dark-rgb),var(--bs-bg-opacity))!important;
+}
+
+.card-title {
+  margin-bottom: var(--bs-card-title-spacer-y);
+  color: #202020;
+  margin-left: 50px;
+  margin-top: 100px;
+  padding: 50px;
+  font-family: 'Josefin Slab', serif;
+}
+
+.card-text {
+  color: #202020;
+}
+
+.py-3 {
+  padding-top: 1rem!important;
+  padding-bottom: 1rem!important;
+}
+
+.background {
+  color: white;
+}
+
+
+.side-widet a {
+  color: #202020;
+}
+
+.side-widet a:hover {
+  text-decoration: none;
+  color: #202020;
+}
