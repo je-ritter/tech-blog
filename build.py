@@ -1,22 +1,8 @@
-print("printing a static site")
-
-#def main():
-#    header_template = open('./templates/header.html').read()
-#    footer_template = open('./templates/footer.html').read()
-#
-#    content = open('./content/index.html').read()
-#    index_html = header_template + content + footer_template
-#    open('./docs/index.html', 'w+').write(index_html)
-#
-#    content = open('./content/blog.html').read()
-#    blog_html = header_template + content + footer_template
-#    open('./docs/blog.html', 'w+').write(blog_html)
-#
-#    content = open('./content/about.html').read()
-#    about_html = header_template + content + footer_template
-#    open('./docs/about.html', 'w+').write(about_html)
 
 
+print("Printing Updates:")
+
+# Pages Directory for updating the site.
 pages = [
     {
     "filename": "./content/index.html",
@@ -37,14 +23,26 @@ pages = [
 
 def main ():
     for page in pages:
+        header_template = open('./templates/header.html').read()
+        footer_template = open('./templates/footer.html').read()
         input_filename = page['filename']
-        content = open(input_filename).read() # removing hardcoded string
-
+        content = open(input_filename).read()
+        # curious about a way to write the if statements more DRY 
+        if input_filename == "./content/index.html":
+            index_html = header_template + content + footer_template
+            open('./docs/index.html', 'w+').write(index_html)
+        if input_filename == "./content/about.html":
+            about_html = header_template + content + footer_template
+            open('./docs/about.html', 'w+').write(about_html)
+        if input_filename == "./content/blog.html":
+            blog_html = header_template + content + footer_template
+            open('./docs/blog.html', 'w+').write(blog_html)
+            
+# Prints out pages. Seem to be if the main is working, everything prints out.            
 for page in pages:
     page_title = page['title']
     main ()
     print(page_title)
 
-#Another Hint from Micahel:
 
 
