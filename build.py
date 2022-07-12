@@ -6,43 +6,67 @@ print("Printing Updates:")
 pages = [
     {
     "filename": "./content/index.html",
-    "output": "./docs/python/index.html",
-    "title": "Home",
+    "output": "./docs/index.html",
+    "title": "Jake Ritter | Home",
     },
     {
     "filename": "./content/about.html",
-    "output": "./docs/python/about.html",
-    "title": "About Me",
+    "output": "./docs/about.html",
+    "title": "Jake Ritter | About Me",
     },
     {
     "filename": "./content/blog.html",
-    "output": "./docs/python/blog.html",
-    "title": "Blog",
+    "output": "./docs/blog.html",
+    "title": "Jake Ritter | Blog",
     }
 ]
 
-def main ():
-    for page in pages:
-        header_template = open('./templates/header.html').read()
-        footer_template = open('./templates/footer.html').read()
-        input_filename = page['filename']
-        content = open(input_filename).read()
-        # curious about a way to write the if statements more DRY 
-        if input_filename == "./content/index.html":
-            index_html = header_template + content + footer_template
-            open('./docs/index.html', 'w+').write(index_html)
-        if input_filename == "./content/about.html":
-            about_html = header_template + content + footer_template
-            open('./docs/about.html', 'w+').write(about_html)
-        if input_filename == "./content/blog.html":
-            blog_html = header_template + content + footer_template
-            open('./docs/blog.html', 'w+').write(blog_html)
-            
-# Prints out pages. Seem to be if the main is working, everything prints out.            
+
+# Preps Pages and starts template creation. Replacing original content.
+def apply_template():
+    template = open("./templates/base.html").read()
+    input_content = open(page["filename"]).read()
+    updated_title = page["title"]
+
+    new_content = template.replace("{{content}}", input_content)
+    new_page = new_content.replace("{{title}}", updated_title)
+    return new_page
+
+# Replaces link placeholders in template to allow site to be "active"
+def apply_active_link():
+    if page["title"] == "Jake Ritter | Home":
+        new_home = new_page.replace("{{home_link_active}}", " active")
+        return new_home
+    elif page["title"] == "Jake Ritter | About Me":
+        new_about = new_page.replace("{{about_link_active}}", " active")
+        return new_about
+    elif page["title"] == "Jake Ritter | Blog":
+        new_blog = new_page.replace("{{blog_link_active}}", " active")
+        return new_blog
+    else:
+        print(">>>> " + page["title"] + " <<<< has not been updated")
+
+# Finishes and writes updated pages
+def main():
+    output = page["output"]
+    
+    if output == "./docs/index.html": 
+        open(output, "w+").write(new_home)
+        print("LINK ACTIVE FOR " + page["title"])   
+    elif output == "./docs/about.html": 
+        open(output, "w+").write(new_about)
+        print("LINK ACTIVE FOR " + page["title"])
+    elif output == "./docs/blog.html": 
+        open(output, "w+").write(new_blog)
+        print("LINK ACTIVE FOR " + page["title"])   
+    else:
+        open(output, "w+").write(new_page)
+
+# Runs the functions and pushes out the site we want
 for page in pages:
-    page_title = page['title']
-    main ()
-    print(page_title)
-
-
+    new_page = apply_template()
+    new_home = apply_active_link()
+    new_about = apply_active_link()
+    new_blog = apply_active_link()
+    main()
 

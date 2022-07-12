@@ -1,10 +1,3 @@
-/* html { 
-  background: url(images/bg.jpg) no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-} */
 
 body {
   font-family: 'Lato', sans-serif;
@@ -36,17 +29,6 @@ h1, h2, h3 {
   font-family: 'Lato', sans-serif;
 }
 
-.buttons {
-  text-align: center;
-  margin-bottom: 50px;
-}
-
-btn-dark btn-large {
-  margin-bottom: 50px;
-  background-color: #202020;
-  color: #6666CC
-}
-
 .linkylinks  {
   color: #202020;
 }
@@ -55,31 +37,58 @@ btn-dark btn-large {
   font-family: 'Josefin Slab', serif;
 }
 
+footer div p {
+  font-family: 'Josefin Slab', serif;
+  font-size: smaller;
+  font-weight: 500;        
+}
+
 .bg-dark {
   --bs-bg-opacity: 1;
   background-color: rgba(var(--bs-dark-rgb),var(--bs-bg-opacity))!important;
 }
 
+.front-page.card {
+  margin-bottom: 3;
+  width: 800px;
+  background: none;
+  border: none;
+  margin-bottom: 50px;
+}
+
+.front-page.col-md-4 {
+  margin-top: 75px;
+  margin-left: 25px;
+}
+
 .card-title {
-  margin-bottom: var(--bs-card-title-spacer-y);
   color: #202020;
   margin-left: 50px;
-  margin-top: 100px;
-  padding: 50px;
   font-family: 'Josefin Slab', serif;
 }
 
-.card-text {
-  color: #202020;
+.card-title.h4 {
+  margin-top: 25px;
 }
 
-.py-3 {
-  padding-top: 1rem!important;
-  padding-bottom: 1rem!important;
+h2 .card-title {
+  margin-top: 50px;
+  font-size: larger;
+}
+
+
+.card-text {
+  color: #202020;
+  margin-left: 50px;
+  margin-bottom: 75px;
 }
 
 .background {
-  color: white;
+  background: url(../img/Moonrise.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 
@@ -90,4 +99,9 @@ btn-dark btn-large {
 .side-widet a:hover {
   text-decoration: none;
   color: #202020;
+}
+
+.photo-carousel {
+  margin-top: 75px;
+  margin-bottom: 75px;
 }
