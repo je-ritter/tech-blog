@@ -1,4 +1,3 @@
-import json
 
 print("Printing Updates:")
 
