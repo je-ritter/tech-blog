@@ -68,4 +68,6 @@ for page in pages:
     new_about = apply_active_link()
     new_blog = apply_active_link()
     main()
+    
+#testing for an update.    
 
